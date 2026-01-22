@@ -10,8 +10,8 @@ function initNavbar() {
   });
 
   // Smooth scroll + close mobile menu
-  navLinks.forEach(link => {
-    link.addEventListener("click", e => {
+  navLinks.forEach((link) => {
+    link.addEventListener("click", (e) => {
       e.preventDefault();
 
       const target = document.querySelector(link.getAttribute("href"));
@@ -19,7 +19,7 @@ function initNavbar() {
 
       window.scrollTo({
         top: target.offsetTop - 80,
-        behavior: "smooth"
+        behavior: "smooth",
       });
 
       mobileMenu.classList.add("hidden");
@@ -34,14 +34,14 @@ window.addEventListener("scroll", () => {
 
   let current = "";
 
-  sections.forEach(section => {
+  sections.forEach((section) => {
     const sectionTop = section.offsetTop - 120;
     if (scrollY >= sectionTop) {
       current = section.getAttribute("id");
     }
   });
 
-  navLinks.forEach(link => {
+  navLinks.forEach((link) => {
     link.classList.remove("text-primary", "font-semibold");
 
     if (link.getAttribute("href") === `#${current}`) {
@@ -49,4 +49,3 @@ window.addEventListener("scroll", () => {
     }
   });
 });
-

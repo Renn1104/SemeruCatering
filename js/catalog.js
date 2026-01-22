@@ -23,7 +23,7 @@ function renderProducts(data) {
     return;
   }
 
-  paginated.forEach(p => {
+  paginated.forEach((p) => {
     productList.innerHTML += `
       <div class="bg-white rounded-lg shadow hover:shadow-lg transition p-3">
         <img src="${p.image}" class="rounded mb-3 h-40 w-full object-cover">
@@ -66,9 +66,10 @@ function filterProducts() {
   const category = filterCategory.value;
   const keyword = searchInput.value.toLowerCase();
 
-  filteredProducts = products.filter(p =>
-    (category === "all" || p.category === category) &&
-    p.name.toLowerCase().includes(keyword)
+  filteredProducts = products.filter(
+    (p) =>
+      (category === "all" || p.category === category) &&
+      p.name.toLowerCase().includes(keyword),
   );
 
   currentPage = 1;

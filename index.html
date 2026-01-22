@@ -1,202 +1,214 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Semeru Catering</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semeru Catering</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Tailwind Config -->
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            poppins: ['Poppins', 'sans-serif'],
-          },
-          colors: {
-            primary: '#1E5AA8',
-            secondary: '#F59E0B',
-          }
-        }
-      }
-    }
-  </script>
-</head>
-
-<body class="font-poppins text-gray-700 scroll-smooth">
-
-<!-- ================= NAVBAR ================= -->
-<header class="fixed top-0 w-full bg-white shadow z-50">
-  <nav class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-4">
-
-    <h1 class="font-bold text-primary text-lg">Semeru Catering</h1>
-
-    <!-- Desktop Menu -->
-    <ul class="hidden md:flex gap-6 text-sm font-medium">
-      <li><a href="#beranda" class="nav-link">Beranda</a></li>
-      <li><a href="#profil" class="nav-link">Profil Usaha</a></li>
-      <li><a href="#katalog" class="nav-link">Katalog</a></li>
-      <li><a href="#lokasi" class="nav-link">Lokasi</a></li>
-    </ul>
-
-    <!-- Hamburger -->
-    <button id="menuBtn" class="md:hidden text-primary">
-      ☰
-    </button>
-  </nav>
-
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
-    <ul class="flex flex-col px-6 py-4 gap-4 text-sm">
-      <li><a href="#beranda" class="nav-link">Beranda</a></li>
-      <li><a href="#profil" class="nav-link">Profil Usaha</a></li>
-      <li><a href="#katalog" class="nav-link">Katalog</a></li>
-      <li><a href="#lokasi" class="nav-link">Lokasi</a></li>
-    </ul>
-  </div>
-</header>
-
-
-<!-- ================= HERO ================= -->
-<section
-  id="beranda"
-  class="pt-28 bg-cover bg-center"
-  style="background-image:url('https://images.unsplash.com/photo-1608198093002-ad4e005484ec');"
->
-  <div class="bg-black/60">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20
-                grid grid-cols-1 md:grid-cols-2 gap-10 items-center text-white">
-
-      <div>
-        <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-snug">
-          Selamat Datang di <br>
-          <span class="text-secondary">Semeru Catering</span>
-        </h2>
-        <p class="text-sm sm:text-base leading-relaxed mb-6">
-          Usaha catering kue rumahan sejak 1991, menyediakan kue basah dan kue kering
-          dengan cita rasa terbaik.
-        </p>
-        <a href="#katalog"
-          class="inline-block bg-secondary px-6 py-3 rounded-lg text-sm font-semibold hover:opacity-90">
-          Lihat Produk
-        </a>
-      </div>
-
-      <img
-        src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png"
-        alt="Chef"
-        class="w-56 sm:w-64 md:w-72 mx-auto"
-      />
-    </div>
-  </div>
-</section>
-
-<!-- ================= PROFIL USAHA ================= -->
-<section id="profil" class="py-16 sm:py-20 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6
-              grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-
-    <div>
-      <h2 class="text-xl sm:text-2xl font-semibold text-primary mb-4">
-        Profil Usaha
-      </h2>
-      <p class="text-sm sm:text-base leading-relaxed mb-6">
-        Semeru Catering merupakan usaha catering kue rumahan yang berdiri sejak
-        tahun 1991 di Kota Probolinggo dan telah melayani berbagai kebutuhan acara.
-      </p>
-
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div class="bg-blue-100 p-4 rounded-lg text-center">
-          <p class="text-xl font-bold text-primary">34+</p>
-          <span class="text-xs sm:text-sm">Tahun Pengalaman</span>
-        </div>
-        <div class="bg-blue-100 p-4 rounded-lg text-center">
-          <p class="text-xl font-bold text-primary">5+</p>
-          <span class="text-xs sm:text-sm">Kota Pelanggan</span>
-        </div>
-        <div class="bg-blue-100 p-4 rounded-lg text-center">
-          <p class="text-xl font-bold text-primary">20+</p>
-          <span class="text-xs sm:text-sm">Varian Produk</span>
-        </div>
-      </div>
-    </div>
-
-    <img
-      src="https://images.unsplash.com/photo-1544717305-2782549b5136"
-      alt="Owner"
-      class="rounded-lg shadow-lg w-full max-w-md mx-auto"
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
     />
-  </div>
-</section>
 
-<!-- ================= KATALOG ================= -->
-<section id="katalog" class="py-16 sm:py-20 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <h2 class="text-xl sm:text-2xl font-semibold text-center text-primary mb-10">
-      Katalog Produk
-    </h2>
+    <!-- Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              poppins: ["Poppins", "sans-serif"],
+            },
+            colors: {
+              primary: "#1E5AA8",
+              secondary: "#F59E0B",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
 
-    <!-- Filter -->
-    <div class="flex flex-col sm:flex-row gap-4 mb-8">
-      <select id="filterCategory"
-        class="border rounded-lg p-2 text-sm w-full sm:w-48">
-        <option value="all">Semua Kue</option>
-        <option value="basah">Kue Basah</option>
-        <option value="kering">Kue Kering</option>
-      </select>
+  <body class="font-poppins text-gray-700 scroll-smooth">
+    <!-- ================= NAVBAR ================= -->
+    <header class="fixed top-0 w-full bg-white shadow z-50">
+      <nav
+        class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-4"
+      >
+        <h1 class="font-bold text-primary text-lg">Semeru Catering</h1>
 
-      <input
-        id="searchInput"
-        type="text"
-        placeholder="Cari produk..."
-        class="border rounded-lg p-2 text-sm w-full"
-      />
-    </div>
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex gap-6 text-sm font-medium">
+          <li><a href="#beranda" class="nav-link">Beranda</a></li>
+          <li><a href="#profil" class="nav-link">Profil Usaha</a></li>
+          <li><a href="#katalog" class="nav-link">Katalog</a></li>
+          <li><a href="#lokasi" class="nav-link">Lokasi</a></li>
+        </ul>
 
-    <!-- Product List (diisi JS) -->
-    <div
-      id="productList"
-      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-    </div>
-  </div>
-</section>
+        <!-- Hamburger -->
+        <button id="menuBtn" class="md:hidden text-primary">☰</button>
+      </nav>
 
-<!-- ================= LOKASI ================= -->
-<section id="lokasi" class="py-16 sm:py-20 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-    <h2 class="text-xl sm:text-2xl font-semibold text-primary mb-6">
-      Lokasi
-    </h2>
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+        <ul class="flex flex-col px-6 py-4 gap-4 text-sm">
+          <li><a href="#beranda" class="nav-link">Beranda</a></li>
+          <li><a href="#profil" class="nav-link">Profil Usaha</a></li>
+          <li><a href="#katalog" class="nav-link">Katalog</a></li>
+          <li><a href="#lokasi" class="nav-link">Lokasi</a></li>
+        </ul>
+      </div>
+    </header>
 
-    <div class="rounded-lg overflow-hidden shadow-lg">
-      <iframe
-        class="w-full h-72 sm:h-96"
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.53616845702!2d113.212038!3d-7.755815"
-        loading="lazy">
-      </iframe>
-    </div>
-  </div>
-</section>
+    <!-- ================= HERO ================= -->
+    <section
+      id="beranda"
+      class="pt-28 bg-cover bg-center"
+      style="
+        background-image: url(&quot;https://images.unsplash.com/photo-1608198093002-ad4e005484ec&quot;);
+      "
+    >
+      <div class="bg-black/60">
+        <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center text-white"
+        >
+          <div>
+            <h2
+              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-snug"
+            >
+              Selamat Datang di <br />
+              <span class="text-secondary">Semeru Catering</span>
+            </h2>
+            <p class="text-sm sm:text-base leading-relaxed mb-6">
+              Usaha catering kue rumahan sejak 1991, menyediakan kue basah dan
+              kue kering dengan cita rasa terbaik.
+            </p>
+            <a
+              href="#katalog"
+              class="inline-block bg-secondary px-6 py-3 rounded-lg text-sm font-semibold hover:opacity-90"
+            >
+              Lihat Produk
+            </a>
+          </div>
 
-<!-- ================= FOOTER ================= -->
-<footer class="bg-primary text-white py-6">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center text-xs sm:text-sm">
-    © 2025 Semeru Catering · All Rights Reserved
-  </div>
-</footer>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png"
+            alt="Chef"
+            class="w-56 sm:w-64 md:w-72 mx-auto"
+          />
+        </div>
+      </div>
+    </section>
 
-<!-- ================= JS FILES ================= -->
-<script src="js/data.js"></script>
-<script src="js/catalog.js"></script>
-<script src="js/navbar.js"></script>
-<script src="js/main.js"></script>
+    <!-- ================= PROFIL USAHA ================= -->
+    <section id="profil" class="py-16 sm:py-20 bg-white">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+      >
+        <div>
+          <h2 class="text-xl sm:text-2xl font-semibold text-primary mb-4">
+            Profil Usaha
+          </h2>
+          <p class="text-sm sm:text-base leading-relaxed mb-6">
+            Semeru Catering merupakan usaha catering kue rumahan yang berdiri
+            sejak tahun 1991 di Kota Probolinggo dan telah melayani berbagai
+            kebutuhan acara.
+          </p>
 
-</body>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div class="bg-blue-100 p-4 rounded-lg text-center">
+              <p class="text-xl font-bold text-primary">34+</p>
+              <span class="text-xs sm:text-sm">Tahun Pengalaman</span>
+            </div>
+            <div class="bg-blue-100 p-4 rounded-lg text-center">
+              <p class="text-xl font-bold text-primary">5+</p>
+              <span class="text-xs sm:text-sm">Kota Pelanggan</span>
+            </div>
+            <div class="bg-blue-100 p-4 rounded-lg text-center">
+              <p class="text-xl font-bold text-primary">20+</p>
+              <span class="text-xs sm:text-sm">Varian Produk</span>
+            </div>
+          </div>
+        </div>
+
+        <img
+          src="https://images.unsplash.com/photo-1544717305-2782549b5136"
+          alt="Owner"
+          class="rounded-lg shadow-lg w-full max-w-md mx-auto"
+        />
+      </div>
+    </section>
+
+    <!-- ================= KATALOG ================= -->
+    <section id="katalog" class="py-16 sm:py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+        <h2
+          class="text-xl sm:text-2xl font-semibold text-center text-primary mb-10"
+        >
+          Katalog Produk
+        </h2>
+
+        <!-- Filter -->
+        <div class="flex flex-col sm:flex-row gap-4 mb-8">
+          <select
+            id="filterCategory"
+            class="border rounded-lg p-2 text-sm w-full sm:w-48"
+          >
+            <option value="all">Semua Kue</option>
+            <option value="basah">Kue Basah</option>
+            <option value="kering">Kue Kering</option>
+          </select>
+
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Cari produk..."
+            class="border rounded-lg p-2 text-sm w-full"
+          />
+        </div>
+
+        <!-- Product List (diisi JS) -->
+        <div
+          id="productList"
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        ></div>
+      </div>
+    </section>
+
+    <!-- ================= LOKASI ================= -->
+    <section id="lokasi" class="py-16 sm:py-20 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+        <h2 class="text-xl sm:text-2xl font-semibold text-primary mb-6">
+          Lokasi
+        </h2>
+
+        <div class="rounded-lg overflow-hidden shadow-lg">
+          <iframe
+            class="w-full h-72 sm:h-96"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3958.53616845702!2d113.212038!3d-7.755815"
+            loading="lazy"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="bg-primary text-white py-6">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 text-center text-xs sm:text-sm"
+      >
+        © 2025 Semeru Catering · All Rights Reserved
+      </div>
+    </footer>
+
+    <!-- ================= JS FILES ================= -->
+    <script src="js/data.js"></script>
+    <script src="js/catalog.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
