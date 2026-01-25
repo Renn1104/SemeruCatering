@@ -19,12 +19,12 @@
       tailwind.config = {
         theme: {
           extend: {
+            colors: {
+              primary: "#10416D", // biru
+              secondary: "#fb923c", // oranye
+            },
             fontFamily: {
               poppins: ["Poppins", "sans-serif"],
-            },
-            colors: {
-              primary: "#1E5AA8",
-              secondary: "#F59E0B",
             },
           },
         },
@@ -38,27 +38,38 @@
       <nav
         class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-4"
       >
-        <h1 class="font-bold text-primary text-lg">Semeru Catering</h1>
+        <!-- Logo -->
+        <div class="flex items-center gap-2">
+          <img
+            src="assets/images/profile/logo_semerucatering.png"
+            alt="Semeru Catering"
+            class="w-1513 h-14"
+          />
+        </div>
 
         <!-- Desktop Menu -->
-        <ul class="hidden md:flex gap-6 text-sm font-medium">
+        <ul class="hidden md:flex gap-10 text-sm font-medium">
           <li><a href="#beranda" class="nav-link">Beranda</a></li>
           <li><a href="#profil" class="nav-link">Profil Usaha</a></li>
-          <li><a href="#katalog" class="nav-link">Katalog</a></li>
+          <li><a href="#katalog" class="nav-link">Produk</a></li>
           <li><a href="#lokasi" class="nav-link">Lokasi</a></li>
+          <!-- <li><a href="#kontak" class="nav-link">Kontak</a></li> -->
         </ul>
 
         <!-- Hamburger -->
-        <button id="menuBtn" class="md:hidden text-primary">☰</button>
+        <button id="menuBtn" class="md:hidden text-2xl text-blue-900">
+          ☰
+        </button>
       </nav>
 
       <!-- Mobile Menu -->
       <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
-        <ul class="flex flex-col px-6 py-4 gap-4 text-sm">
+        <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-medium">
           <li><a href="#beranda" class="nav-link">Beranda</a></li>
           <li><a href="#profil" class="nav-link">Profil Usaha</a></li>
-          <li><a href="#katalog" class="nav-link">Katalog</a></li>
+          <li><a href="#katalog" class="nav-link">Produk</a></li>
           <li><a href="#lokasi" class="nav-link">Lokasi</a></li>
+          <!-- <li><a href="#kontak" class="nav-link">Kontak</a></li> -->
         </ul>
       </div>
     </header>
@@ -66,43 +77,48 @@
     <!-- ================= HERO ================= -->
     <section
       id="beranda"
-      class="pt-28 bg-cover bg-center"
+      class="relative min-h-[600px] md:h-screen flex items-center overflow-hidden bg-cover bg-center"
       style="
-        background-image: url(&quot;https://images.unsplash.com/photo-1608198093002-ad4e005484ec&quot;);
+        background-image: url(&quot;assets/images/hero/background_product.png&quot;);
       "
     >
-      <div class="bg-black/60">
-        <div
-          class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20 grid grid-cols-1 md:grid-cols-2 gap-10 items-center text-white"
-        >
-          <div>
-            <h2
-              class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-snug"
+      <div class="absolute inset-0 bg-black/50"></div>
+      <div class="relative container mx-auto px-6 h-full w-full">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center h-full">
+          <div
+            class="relative h-full flex items-end justify-center md:justify-start order-2 md:order-1"
+          >
+            <img
+              src="assets/images/hero/mascot.png"
+              alt="Semeru Catering"
+              class="w-[50%] md:w-[70%] lg:w-full max-h-[91%] object-contain block"
+              style="margin-bottom: -2px"
+            />
+          </div>
+          <div
+            class="flex flex-col justify-center text-white text-center md:text-left pt-32 md:pt-0 order-1 md:order-2"
+          >
+            <h1
+              class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-8"
             >
               Selamat Datang di <br />
-              <span class="text-secondary">Semeru Catering</span>
-            </h2>
-            <p class="text-sm sm:text-base leading-relaxed mb-6">
-              Usaha catering kue rumahan sejak 1991, menyediakan kue basah dan
-              kue kering dengan cita rasa terbaik.
-            </p>
-            <a
-              href="#katalog"
-              class="inline-block bg-secondary px-6 py-3 rounded-lg text-sm font-semibold hover:opacity-90"
-            >
-              Lihat Produk
-            </a>
+              Katalog Produk <br />
+              <span class="text-blue-400">Semeru</span>
+              <span class="text-orange-400">Catering</span>
+            </h1>
+            <div>
+              <a
+                href="#katalog"
+                class="inline-block bg-blue-600 hover:bg-blue-700 transition px-10 py-4 rounded-xl text-lg font-semibold shadow-2xl"
+              >
+                Lihat Produk
+              </a>
+            </div>
           </div>
-
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/1995/1995574.png"
-            alt="Chef"
-            class="w-56 sm:w-64 md:w-72 mx-auto"
-          />
         </div>
       </div>
     </section>
-
+    
     <!-- ================= PROFIL USAHA ================= -->
     <section id="profil" class="py-16 sm:py-20 bg-white">
       <div
