@@ -1,31 +1,58 @@
-// data.js
 const products = [
   {
     id: 1,
     name: "Pie Buah",
     category: "basah",
     price: 3000,
-    image: "https://i.imgur.com/6YVb7YH.jpg",
+    image: "assets/images/products/Pie Buah.jpg",
   },
   {
     id: 2,
     name: "Risoles Ayam",
     category: "basah",
     price: 2500,
-    image: "https://i.imgur.com/8OQxXbE.jpg",
+    image: "assets/images/products/Risol Mayo.jpg",
   },
   {
     id: 3,
     name: "Pastel",
     category: "basah",
     price: 2500,
-    image: "https://i.imgur.com/kOZ7j7N.jpg",
+    image: "assets/images/products/pastel.jpg",
   },
   {
     id: 4,
     name: "Lapis",
     category: "basah",
     price: 3000,
-    image: "https://i.imgur.com/Imk8yYF.jpg",
+    image: "assets/images/products/lapis.jpg",
+  },
+  {
+    id: 5,
+    name: "Kue Cubit",
+    category: "basah",
+    price: 2000,
+    image: "assets/images/products/kue cubit.jpg",
+  },
+  {
+    id: 6,
+    name: "Kue Lumpur",
+    category: "basah",
+    price: 2000,
+    image: "assets/images/products/kue lumpur.jpg",
+  },
+  {
+    id: 7,
+    name: "Kue Cubit Coklat",
+    category: "basah",
+    price: 2000,
+    image: "assets/images/products/kue cubit coklat.jpg",
+  },
+  {
+    id: 8,
+    name: "Kue Cubit Green Tea",
+    category: "basah",
+    price: 2000,
+    image: "assets/images/products/kue cubit greentea.jpg",
   },
 ];
