@@ -91,7 +91,7 @@
             <img
               src="assets/images/hero/mascot.png"
               alt="Semeru Catering"
-              class="w-[50%] md:w-[70%] lg:w-full max-h-[91%] object-contain block"
+              class="w-[50%] md:w-[70%] lg:w-full max-h-[80%] object-contain block"
               style="margin-bottom: -2px"
             />
           </div>
@@ -99,11 +99,11 @@
             class="flex flex-col justify-center text-white text-center md:text-left pt-32 md:pt-0 order-1 md:order-2"
           >
             <h1
-              class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-8"
+              class="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight mb-8"
             >
               Selamat Datang di <br />
               Katalog Produk <br />
-              <span class="text-blue-400">Semeru</span>
+              <span class="text-blue-500">Semeru</span>
               <span class="text-orange-400">Catering</span>
             </h1>
             <div>
@@ -123,67 +123,96 @@
     <section id="profil" class="py-20 bg-white">
       <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-          <!-- KIRI: TEXT -->
-          <div>
-            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+
+          <!-- Bagian Kiri: Teks -->
+          <div class="flex flex-col">
+            <h2 class="text-4xl font-semibold text-[#10416D] mb-6 transition-all duration-700 ease-in-out hover:text-[#243fa7]">
               Profil Usaha
             </h2>
 
             <p class="text-gray-700 mb-6">
-              <span class="font-semibold">Ermawati</span> – Sebagai
-              <span class="font-semibold text-primary"> Wiraswasta </span>
+              <span class="font-semibold text-gray-800">Ermawati</span> – Sebagai
+              <span class="font-semibold text-[#1e3a8a]"> Wiraswasta </span>
               yang bergerak di bidang Catering Kue (Cake)
             </p>
 
-            <p class="text-gray-600 leading-relaxed mb-10">
-              Saya adalah seorang wiraswasta yang berkarir dan bergerak di
-              bidang Catering Kue (Cake). Semeru Catering merupakan nama usaha
-              milik saya pribadi dan dikelola dengan sistem
-              <i>home catering</i>. Usaha ini berdiri pada 22 September 1991
-              pada awal saya meniti karir, dan hingga saat ini saya terus
-              mengembangkan usaha ini dengan berbagai macam jenis kue seperti
-              kue basah, kering, dan lain sebagainya.
+            <p class="text-gray-600 leading-relaxed mb-10 text-justify">
+              Saya adalah seorang wiraswasta yang berkarir dan bergerak di bidang
+              Catering Kue (Cake). <span class="font-semibold text-[#1e3a8a]">Semeru Catering</span>
+              merupakan nama usaha milik saya pribadi dan dikelola dengan sistem
+              <i>home catering</i>. Usaha ini berdiri pada 22 September 1991 pada awal saya
+              meniti karir, dan hingga saat ini saya terus mengembangkan usaha ini
+              dengan berbagai macam jenis kue seperti kue basah, kering, dan lain sebagainya.
             </p>
 
-            <!-- STAT BOX -->
+            <!-- Statistik -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              <div class="bg-[#8FA1B6] text-white rounded-2xl p-6 text-center">
+              <!-- Card 1 -->
+              <div
+                class="bg-gradient-to-br from-[#8FA1B6] to-[#9BAAC2] text-white rounded-2xl p-6 text-center min-h-[140px]
+                      flex flex-col justify-center shadow-md transition-all duration-500 ease-in-out transform
+                      hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:from-[#1E78CA] hover:to-[#8292AB]"
+              >
                 <p class="text-3xl font-bold">34+</p>
-                <p class="text-sm mt-1">Tahun<br />Mengembangkan Usaha</p>
-              </div>
-
-              <div class="bg-[#8FA1B6] text-white rounded-2xl p-6 text-center">
-                <p class="text-3xl font-bold">5+</p>
-                <p class="text-sm mt-1">
-                  Tahun Bekerja sama dengan DPRD Kota Probolinggo
+                <p class="text-[11px] mt-2 uppercase font-medium leading-tight">
+                  Tahun<br />Mengembangkan Usaha
                 </p>
               </div>
 
-              <div class="bg-[#8FA1B6] text-white rounded-2xl p-6 text-center">
+              <!-- Card 2 -->
+              <div
+                class="bg-gradient-to-br from-[#8FA1B6] to-[#9BAAC2] text-white rounded-2xl p-6 text-center min-h-[140px]
+                      flex flex-col justify-center shadow-md transition-all duration-500 ease-in-out transform
+                      hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:from-[#1E78CA] hover:to-[#8292AB]"
+              >
+                <p class="text-3xl font-bold">5+</p>
+                <p class="text-[11px] mt-2 uppercase font-medium leading-tight">
+                  Kerja Sama DPRD<br />Kota Probolinggo
+                </p>
+              </div>
+
+              <!-- Card 3 -->
+              <div
+                class="bg-gradient-to-br from-[#8FA1B6] to-[#9BAAC2] text-white rounded-2xl p-6 text-center min-h-[140px]
+                      flex flex-col justify-center shadow-md transition-all duration-500 ease-in-out transform
+                      hover:scale-105 hover:-translate-y-1 hover:shadow-2xl hover:from-[#1E78CA] hover:to-[#8292AB]"
+              >
                 <p class="text-3xl font-bold">20+</p>
-                <p class="text-sm mt-1">Pelatihan Kursus Kue Elisa Malang</p>
+                <p class="text-[11px] mt-2 uppercase font-medium leading-tight">
+                  Pelatihan Kursus<br />Kue Elisa Malang
+                </p>
               </div>
             </div>
           </div>
 
-          <!-- KANAN: FOTO -->
-        <div class="flex justify-center lg:justify-end items-start">
-          <div class="bg-white p-4 rounded-[32px] shadow-xl border border-gray-100 max-w-sm w-full">
-            <div class="overflow-hidden rounded-[24px] aspect-[4/5] bg-gray-50">
+          <!-- Bagian Kanan: Foto -->
+          <div class="flex justify-center lg:justify-end">
+            <div
+              class="relative max-w-[400px] w-full bg-gradient-to-b from-white via-gray-50 to-gray-100 rounded-[40px] shadow-lg p-4 
+                    flex items-end justify-center overflow-hidden
+                    transition-all duration-500 ease-in-out 
+                    hover:shadow-2xl hover:scale-[1.03] hover:-translate-y-1"
+            >
               <img
-                src="assets/images/profile/card_profil.png"
+                src="assets/images/profile/owner.png"
                 alt="Owner Semeru Catering"
-                class="w-full h-full object-cover object-top"
+                class="w-full h-auto rounded-[30px] object-contain object-bottom transition-transform duration-500 ease-in-out hover:scale-105"
               />
+              <div
+                class="absolute bottom-0 left-0 w-full h-[80px] bg-gradient-to-t from-blue-200 to-transparent pointer-events-none"
+              ></div>
             </div>
           </div>
+
         </div>
-        </section>
+      </div>
+    </section>
+
     <!-- ================= KATALOG ================= -->
     <section id="katalog" class="py-16 sm:py-20 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="max-w-5xl mx-auto px-3 sm:px-6">
         <h2
-          class="text-xl sm:text-2xl font-semibold text-center text-primary mb-10"
+          class="text-xl sm:text-4xl font-semibold text-center text-primary mb-10"
         >
           Katalog Produk
         </h2>
@@ -218,24 +247,36 @@
     <!-- ================= LOKASI ================= -->
     <section id="lokasi" class="py-16 sm:py-20 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-        <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-8">
-          Lokasi Kami
+        <h2
+          class="text-xl sm:text-4xl font-semibold text-center text-primary mb-10"
+        >
+          Lokasi
         </h2>
 
-        <div class="rounded-[2rem] overflow-hidden shadow-2xl border-8 border-gray-50">
+        <div
+          class="rounded-[2rem] overflow-hidden shadow-2xl border-8 border-gray-50"
+        >
           <iframe
             class="w-full h-72 sm:h-[500px]"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m13!1m3!1d3950.485123456789!2d113.2232047!3d-7.75337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7ade3fbb8a8dd%3A0xb5314dd3d1c872a3!2sDapur%20Semeru!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
-            style="border:0;"
+            style="border: 0"
             allowfullscreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
+            referrerpolicy="no-referrer-when-downgrade"
+          >
           </iframe>
         </div>
-        
+
         <div class="mt-6">
-          <p class="text-gray-600 font-medium">Jl. Kh Ahmad Dahlan No.124, Kebonsari Kulon, Kec. Kanigaran, Kota Probolinggo</p>
-          <a href="https://maps.app.goo.gl/W5z93z7Wv8Y" target="_blank" class="text-blue-600 hover:underline text-sm font-semibold">
+          <p class="text-gray-600 font-medium">
+            Jl. Kh Ahmad Dahlan No.124, Kebonsari Kulon, Kec. Kanigaran, Kota
+            Probolinggo
+          </p>
+          <a
+            href="https://maps.app.goo.gl/W5z93z7Wv8Y"
+            target="_blank"
+            class="text-blue-600 hover:underline text-sm font-semibold"
+          >
             Buka di Google Maps
           </a>
         </div>
