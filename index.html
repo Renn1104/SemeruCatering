@@ -68,10 +68,55 @@
         <ul
           class="hidden md:flex items-center gap-10 text-sm font-medium text-gray-800 dark:text-gray-200"
         >
-          <li><a href="#beranda" class="nav-link">Beranda</a></li>
-          <li><a href="#profil" class="nav-link">Profil Usaha</a></li>
-          <li><a href="#katalog" class="nav-link">Produk</a></li>
-          <li><a href="#lokasi" class="nav-link">Lokasi</a></li>
+          <li>
+            <a
+              href="#beranda"
+              class="nav-link relative py-1 transition-colors duration-300 hover:text-blue-600 dark:hover:text-blue-400"
+            >
+              Beranda
+              <span
+                class="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-600 dark:bg-blue-400 transition-all duration-300"
+              ></span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#profil"
+              class="nav-link relative py-1 transition-colors duration-300 hover:text-blue-600 dark:hover:text-blue-400"
+            >
+              Profil Usaha
+              <span
+                class="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-600 dark:bg-blue-400 transition-all duration-300"
+              ></span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#katalog"
+              class="nav-link relative py-1 transition-colors duration-300 hover:text-blue-600 dark:hover:text-blue-400"
+            >
+              Produk
+              <span
+                class="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-600 dark:bg-blue-400 transition-all duration-300"
+              ></span>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#lokasi"
+              class="nav-link relative py-1 transition-colors duration-300 hover:text-blue-600 dark:hover:text-blue-400"
+            >
+              Lokasi
+              <span
+                class="absolute left-0 bottom-0 w-0 h-[2px] bg-blue-600 dark:bg-blue-400 transition-all duration-300"
+              ></span>
+            </a>
+          </li>
+
+          <!-- Theme Toggle -->
           <li>
             <button
               id="themeToggle"
@@ -168,13 +213,9 @@
             class="flex flex-col justify-center text-white text-center md:text-left pt-32 md:pt-0 order-1 md:order-2"
           >
             <h1
-              class="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight mb-8"
-            >
-              Selamat Datang di <br />
-              Katalog Produk <br />
-              <span class="text-blue-400">Semeru</span>
-              <span class="text-orange-400">Catering</span>
-            </h1>
+              id="typingText"
+              class="text-4xl sm:text-5xl md:text-6xl font-semibold leading-tight mb-8 min-h-[150px]"
+            ></h1>
             <div>
               <a
                 href="#katalog"
@@ -557,6 +598,201 @@
             }
           });
         }
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add(
+                  "opacity-100",
+                  "translate-y-0",
+                  "animate-fade-in-up",
+                );
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1 },
+        );
+
+        document
+          .querySelectorAll("section, footer, .animate-on-scroll")
+          .forEach((el) => {
+            el.classList.add(
+              "opacity-0",
+              "translate-y-10",
+              "transition-all",
+              "duration-700",
+              "ease-out",
+            );
+            observer.observe(el);
+          });
+      });
+
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            keyframes: {
+              "fade-in-up": {
+                "0%": { opacity: "0", transform: "translateY(20px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+            },
+            animation: {
+              "fade-in-up": "fade-in-up 0.7s ease-out forwards",
+            },
+          },
+        },
+      };
+    </script>
+    <script>
+      // === Scroll Reveal Animations ===
+      document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("opacity-100", "translate-y-0");
+                entry.target.classList.add(entry.target.dataset.animate);
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 },
+        );
+
+        // Apply base hidden style
+        document.querySelectorAll("section, footer").forEach((el) => {
+          el.classList.add(
+            "opacity-0",
+            "translate-y-10",
+            "transition-all",
+            "duration-700",
+            "ease-out",
+          );
+
+          // Set unique animations per section
+          const id = el.getAttribute("id");
+          switch (id) {
+            case "beranda":
+              el.dataset.animate = "animate-fade-in";
+              break;
+            case "profil":
+              el.dataset.animate = "animate-slide-left";
+              break;
+            case "katalog":
+              el.dataset.animate = "animate-zoom-in";
+              break;
+            case "lokasi":
+              el.dataset.animate = "animate-fade-up";
+              break;
+            default:
+              el.dataset.animate = "animate-slide-up";
+          }
+
+          observer.observe(el);
+        });
+      });
+
+      // === Tambahkan konfigurasi animasi ke Tailwind ===
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            keyframes: {
+              "fade-in": {
+                "0%": { opacity: "0", transform: "translateY(20px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              "fade-up": {
+                "0%": { opacity: "0", transform: "translateY(40px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              "slide-left": {
+                "0%": { opacity: "0", transform: "translateX(60px)" },
+                "100%": { opacity: "1", transform: "translateX(0)" },
+              },
+              "slide-up": {
+                "0%": { opacity: "0", transform: "translateY(40px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              "zoom-in": {
+                "0%": { opacity: "0", transform: "scale(0.95)" },
+                "100%": { opacity: "1", transform: "scale(1)" },
+              },
+            },
+            animation: {
+              "fade-in": "fade-in 1s ease-out forwards",
+              "fade-up": "fade-up 1s ease-out forwards",
+              "slide-left": "slide-left 1s ease-out forwards",
+              "slide-up": "slide-up 1s ease-out forwards",
+              "zoom-in": "zoom-in 1s ease-out forwards",
+            },
+          },
+        },
+      };
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const typingText = document.getElementById("typingText");
+        const cursor = document.getElementById("cursor");
+
+        const phrases = [
+          "Selamat Datang di",
+          "Katalog Produk",
+          "Semeru Catering 🍰",
+        ];
+
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function type() {
+          const currentPhrase = phrases[phraseIndex];
+          let displayedText = currentPhrase.substring(0, charIndex);
+
+          // Kalau yang diketik adalah "Semeru Catering", beri warna per kata
+          if (phraseIndex === 2) {
+            const semeru = displayedText.split(" ")[0] || "";
+            const catering = displayedText.replace(semeru, "").trim() || "";
+            typingText.innerHTML = `
+          <span class="text-blue-800">${semeru}</span>
+          <span class="text-orange-400"> ${catering}</span>
+        `;
+          } else {
+            typingText.textContent = displayedText;
+          }
+
+          let typingSpeed = isDeleting ? 50 : 100;
+
+          if (!isDeleting && charIndex < currentPhrase.length) {
+            charIndex++;
+          } else if (isDeleting && charIndex > 0) {
+            charIndex--;
+          } else {
+            if (!isDeleting) {
+              // pause setelah selesai mengetik
+              isDeleting = true;
+              typingSpeed = 1000;
+            } else {
+              // lanjut ke kata berikut
+              isDeleting = false;
+              phraseIndex = (phraseIndex + 1) % phrases.length;
+              typingSpeed = 400;
+            }
+          }
+
+          setTimeout(type, typingSpeed);
+        }
+
+        // Efek kursor berkedip
+        setInterval(() => cursor.classList.toggle("opacity-0"), 500);
+
+        type();
       });
     </script>
   </body>
