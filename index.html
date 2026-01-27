@@ -20,12 +20,19 @@
         darkMode: "class",
         theme: {
           extend: {
-            colors: {
-              primary: "#10416D",
-              secondary: "#fb923c",
+            keyframes: {
+              slideDown: {
+                "0%": { opacity: "0", transform: "translateY(-10px)" },
+                "100%": { opacity: "1", transform: "translateY(0)" },
+              },
+              slideUp: {
+                "0%": { opacity: "1", transform: "translateY(0)" },
+                "100%": { opacity: "0", transform: "translateY(-10px)" },
+              },
             },
-            fontFamily: {
-              poppins: ["Poppins", "sans-serif"],
+            animation: {
+              slideDown: "slideDown 0.3s ease-out forwards",
+              slideUp: "slideUp 0.3s ease-in forwards",
             },
           },
         },
@@ -38,77 +45,47 @@
   >
     <!-- ================= NAVBAR ================= -->
     <header
-      class="fixed top-0 w-full bg-white dark:bg-gray-900 shadow z-[9999] transition-colors duration-500"
+      class="fixed top-0 left-0 w-full bg-white dark:bg-gray-900 shadow z-[9999] transition-colors duration-500"
     >
       <nav
-        class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-4"
+        class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-4 relative"
       >
         <!-- Logo -->
         <div class="flex items-center gap-2">
           <img
-            id="logoLight"
             src="assets/images/profile/logo_semerucatering.png"
+            class="w-32 dark:hidden"
             alt="Semeru Catering"
-            class="w-32 h-auto block dark:hidden transition-all duration-500"
           />
           <img
-            id="logoDark"
             src="assets/images/profile/dark_logo.png"
+            class="w-32 hidden dark:block"
             alt="Semeru Catering"
-            class="w-32 h-auto hidden dark:block transition-all duration-500"
           />
         </div>
 
         <!-- Desktop Menu -->
         <ul
-          id="desktopMenu"
-          class="hidden md:flex items-center gap-10 text-sm font-medium text-gray-800 dark:text-gray-200 transition-colors duration-500"
+          class="hidden md:flex items-center gap-10 text-sm font-medium text-gray-800 dark:text-gray-200"
         >
-          <li>
-            <a
-              href="#beranda"
-              class="nav-link hover:text-blue-600 dark:hover:text-blue-400 transition"
-              >Beranda</a
-            >
-          </li>
-          <li>
-            <a
-              href="#profil"
-              class="nav-link hover:text-blue-600 dark:hover:text-blue-400 transition"
-              >Profil Usaha</a
-            >
-          </li>
-          <li>
-            <a
-              href="#katalog"
-              class="nav-link hover:text-blue-600 dark:hover:text-blue-400 transition"
-              >Produk</a
-            >
-          </li>
-          <li>
-            <a
-              href="#lokasi"
-              class="nav-link hover:text-blue-600 dark:hover:text-blue-400 transition"
-              >Lokasi</a
-            >
-          </li>
-
-          <!-- Toggle Theme di Desktop -->
+          <li><a href="#beranda" class="nav-link">Beranda</a></li>
+          <li><a href="#profil" class="nav-link">Profil Usaha</a></li>
+          <li><a href="#katalog" class="nav-link">Produk</a></li>
+          <li><a href="#lokasi" class="nav-link">Lokasi</a></li>
           <li>
             <button
               id="themeToggle"
-              class="text-lg p-2 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-all duration-300"
-              title="Toggle Dark/Light Mode"
+              class="text-lg p-2 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition"
             >
               🌙
             </button>
           </li>
         </ul>
 
-        <!-- Hamburger Button -->
+        <!-- Hamburger -->
         <button
           id="menuBtn"
-          class="md:hidden text-2xl text-blue-900 dark:text-white relative z-[10000]"
+          class="md:hidden text-3xl text-blue-900 dark:text-white z-[10000] cursor-pointer transition-transform"
         >
           ☰
         </button>
@@ -117,43 +94,44 @@
       <!-- Mobile Menu -->
       <div
         id="mobileMenu"
-        class="hidden flex-col bg-white dark:bg-gray-800 border-t dark:border-gray-700 text-gray-800 dark:text-gray-200 transition-all duration-500 ease-in-out overflow-hidden"
+        class="hidden flex-col bg-white dark:bg-gray-800 border-t dark:border-gray-700 text-gray-900 dark:text-gray-100 shadow-lg overflow-hidden transition-all duration-500"
       >
-        <ul class="flex flex-col px-6 py-4 gap-4 text-sm font-medium">
+        <ul
+          id="mobileList"
+          class="flex flex-col px-6 py-4 gap-4 text-base font-medium"
+        >
           <li>
             <a
               href="#beranda"
-              class="nav-link hover:text-blue-600 dark:hover:text-blue-400 transition"
+              class="nav-link block hover:text-blue-600 dark:hover:text-blue-400 transition"
               >Beranda</a
             >
           </li>
           <li>
             <a
               href="#profil"
-              class="nav-link hover:text-blue-600 dark:hover:text-blue-400 transition"
+              class="nav-link block hover:text-blue-600 dark:hover:text-blue-400 transition"
               >Profil Usaha</a
             >
           </li>
           <li>
             <a
               href="#katalog"
-              class="nav-link hover:text-blue-600 dark:hover:text-blue-400 transition"
+              class="nav-link block hover:text-blue-600 dark:hover:text-blue-400 transition"
               >Produk</a
             >
           </li>
           <li>
             <a
               href="#lokasi"
-              class="nav-link hover:text-blue-600 dark:hover:text-blue-400 transition"
+              class="nav-link block hover:text-blue-600 dark:hover:text-blue-400 transition"
               >Lokasi</a
             >
           </li>
-
-          <!-- Toggle Theme di Mobile -->
-          <li class="mt-2 border-t border-gray-200 dark:border-gray-700 pt-4">
+          <li class="border-t border-gray-200 dark:border-gray-700 pt-4">
             <button
               id="themeToggleMobile"
-              class="flex items-center gap-2 justify-center w-full text-base bg-gray-100 dark:bg-gray-700 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition-all duration-300"
+              class="flex items-center justify-center gap-2 w-full bg-gray-100 dark:bg-gray-700 py-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-600 transition"
             >
               🌙 <span>Ganti Mode</span>
             </button>
