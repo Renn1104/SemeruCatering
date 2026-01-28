@@ -53,7 +53,7 @@ const products = [
     name: "Spikoe (Besar)",
     category: "kering",
     price: 85000,
-    image: "assets/images/products/Spikoe (Besar).jpg",
+    image: "assets/images/products/Spikoe (besar).jpg",
   },
   {
     id: 9,
