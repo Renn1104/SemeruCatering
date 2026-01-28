@@ -1,4 +1,3 @@
-// main.js
 document.addEventListener("DOMContentLoaded", () => {
   if (typeof initCatalog === "function") {
     initCatalog();

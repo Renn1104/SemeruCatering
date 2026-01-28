@@ -1,5 +1,3 @@
-// ==================== catalog.js ====================
-
 const productList = document.getElementById("productList");
 const filterCategory = document.getElementById("filterCategory");
 const filterPrice = document.getElementById("filterPrice");
@@ -98,7 +96,6 @@ document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeModalWindow();
 });
 
-// === Pagination ===
 function renderPagination(totalItems) {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   if (totalPages <= 1) return;

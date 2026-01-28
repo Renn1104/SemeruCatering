@@ -4,17 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Semeru Catering</title>
-
-    <!-- Google Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Tailwind Config -->
     <script>
       tailwind.config = {
         darkMode: "class",
@@ -50,7 +44,6 @@
       <nav
         class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-4 relative"
       >
-        <!-- Logo -->
         <div class="flex items-center gap-2">
           <img
             src="assets/images/profile/logo_semerucatering.png"
@@ -64,7 +57,6 @@
           />
         </div>
 
-        <!-- Desktop Menu -->
         <ul
           class="hidden md:flex items-center gap-10 text-sm font-medium text-gray-800 dark:text-gray-200"
         >
@@ -116,7 +108,6 @@
             </a>
           </li>
 
-          <!-- Theme Toggle -->
           <li>
             <button
               id="themeToggle"
@@ -127,7 +118,6 @@
           </li>
         </ul>
 
-        <!-- Hamburger -->
         <button
           id="menuBtn"
           class="md:hidden text-3xl text-blue-900 dark:text-white z-[10000] cursor-pointer transition-transform"
@@ -136,7 +126,6 @@
         </button>
       </nav>
 
-      <!-- Mobile Menu -->
       <div
         id="mobileMenu"
         class="hidden flex-col bg-white dark:bg-gray-800 border-t dark:border-gray-700 text-gray-900 dark:text-gray-100 shadow-lg overflow-hidden transition-all duration-500"
@@ -275,7 +264,6 @@
               </h1>
             </div>
             <br />
-            <!-- Statistik -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div
                 class="bg-gradient-to-br from-[#1E3A8A] to-[#9BAAC2] dark:from-[#1B2E48] dark:to-[#304D6D] text-white rounded-2xl p-6 text-center min-h-[140px] flex flex-col justify-center shadow-md transition-all duration-500 hover:scale-105 hover:-translate-y-1 hover:shadow-2xl"
@@ -304,7 +292,6 @@
             </div>
           </div>
 
-          <!-- Foto -->
           <div class="flex justify-center lg:justify-end">
             <div
               class="relative max-w-[400px] w-full bg-gradient-to-b from-white via-gray-50 to-blue-200 dark:from-blue-800 dark:via-gray-700 dark:to-gray-600 rounded-[40px] shadow-lg p-4 flex items-end justify-center overflow-hidden transition-all duration-500 hover:scale-[1.05] hover:-translate-y-1"
@@ -364,7 +351,6 @@
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
         ></div>
       </div>
-      <!-- Modal Preview Produk -->
       <div
         id="productModal"
         class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-[99999] transition-all duration-500"
@@ -422,10 +408,6 @@
         </div>
 
         <div class="mt-6">
-          <!-- <p class="text-gray-600 dark:text-gray-400 font-medium">
-            Jl. KH Ahmad Dahlan No. 124, Kebonsari Kulon, Kec. Kanigaran, Kota
-            Probolinggo
-          </p> -->
           <a
             href="https://maps.app.goo.gl/6jAtWPfRiwBWxxXx6?g_st=ac"
             target="_blank"
@@ -572,7 +554,6 @@
         const menuBtn = document.getElementById("menuBtn");
         const mobileMenu = document.getElementById("mobileMenu");
 
-        // === Load mode dari localStorage ===
         const applyTheme = (isDark) => {
           if (isDark) {
             htmlEl.classList.add("dark");
@@ -590,7 +571,6 @@
         const savedTheme = localStorage.getItem("theme");
         applyTheme(savedTheme === "dark");
 
-        // === Fungsi toggle mode ===
         const toggleTheme = () => {
           const isDark = !htmlEl.classList.contains("dark");
           applyTheme(isDark);
@@ -601,7 +581,6 @@
         if (themeToggleMobile)
           themeToggleMobile.addEventListener("click", toggleTheme);
 
-        // === Fungsi toggle mobile menu ===
         if (menuBtn && mobileMenu) {
           menuBtn.addEventListener("click", () => {
             const isHidden = mobileMenu.classList.contains("hidden");
@@ -668,7 +647,6 @@
       };
     </script>
     <script>
-      // === Scroll Reveal Animations ===
       document.addEventListener("DOMContentLoaded", () => {
         const observer = new IntersectionObserver(
           (entries, observer) => {
@@ -683,7 +661,6 @@
           { threshold: 0.15 },
         );
 
-        // Apply base hidden style
         document.querySelectorAll("section, footer").forEach((el) => {
           el.classList.add(
             "opacity-0",
@@ -693,7 +670,6 @@
             "ease-out",
           );
 
-          // Set unique animations per section
           const id = el.getAttribute("id");
           switch (id) {
             case "beranda":
@@ -716,7 +692,6 @@
         });
       });
 
-      // === konfigurasi animasi ke Tailwind ===
       tailwind.config = {
         darkMode: "class",
         theme: {
