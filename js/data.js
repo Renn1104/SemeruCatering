@@ -18,14 +18,14 @@ const products = [
     name: "Pastel",
     category: "kering",
     price: 5000,
-    image: "assets/images/products/pastel.jpg",
+    image: "assets/images/products/Pastel.jpg",
   },
   {
     id: 4,
     name: "Lapis",
     category: "basah",
     price: 5000,
-    image: "assets/images/products/lapis.jpg",
+    image: "assets/images/products/Lapis.jpg",
   },
   {
     id: 5,
