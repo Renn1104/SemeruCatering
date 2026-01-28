@@ -364,6 +364,27 @@
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
         ></div>
       </div>
+      <!-- Modal Preview Produk -->
+      <div
+        id="productModal"
+        class="hidden fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-[99999] transition-all duration-500"
+      >
+        <div class="relative inline-block">
+          <img
+            id="modalImage"
+            src=""
+            alt="Preview Produk"
+            class="rounded-2xl max-w-[90vw] max-h-[85vh] object-contain shadow-2xl opacity-0 scale-95 transition-all duration-300"
+          />
+          <button
+            id="closeModal"
+            class="absolute top-3 right-3 bg-black/50 dark:bg-gray-900/70 text-white hover:bg-white/70 dark:hover:bg-blue-500 rounded-full w-9 h-9 flex items-center justify-center text-lg transition-all duration-300 shadow-md backdrop-blur-sm z-[100000]"
+            title="Tutup"
+          >
+            ✖
+          </button>
+        </div>
+      </div>
     </section>
 
     <!-- ================= LOKASI ================= -->
@@ -457,7 +478,6 @@
             </p>
 
             <div class="flex gap-5 mt-2">
-              <!-- WhatsApp -->
               <a
                 href="https://wa.me/6282230180406"
                 target="_blank"
@@ -477,8 +497,6 @@
                   />
                 </svg>
               </a>
-
-              <!-- Instagram -->
               <a
                 href="https://www.instagram.com/ermawati_245?igsh=NGxocTRuejNzenJ0"
                 target="_blank"
@@ -698,7 +716,7 @@
         });
       });
 
-      // === Tambahkan konfigurasi animasi ke Tailwind ===
+      // === konfigurasi animasi ke Tailwind ===
       tailwind.config = {
         darkMode: "class",
         theme: {
@@ -744,7 +762,7 @@
         const phrases = [
           "Selamat Datang di",
           "Katalog Produk",
-          "Semeru Catering 🍰",
+          "Semeru Catering",
         ];
 
         let phraseIndex = 0;
@@ -755,7 +773,6 @@
           const currentPhrase = phrases[phraseIndex];
           let displayedText = currentPhrase.substring(0, charIndex);
 
-          // Kalau yang diketik adalah "Semeru Catering", beri warna per kata
           if (phraseIndex === 2) {
             const semeru = displayedText.split(" ")[0] || "";
             const catering = displayedText.replace(semeru, "").trim() || "";
@@ -775,11 +792,9 @@
             charIndex--;
           } else {
             if (!isDeleting) {
-              // pause setelah selesai mengetik
               isDeleting = true;
               typingSpeed = 1000;
             } else {
-              // lanjut ke kata berikut
               isDeleting = false;
               phraseIndex = (phraseIndex + 1) % phrases.length;
               typingSpeed = 400;
@@ -789,7 +804,6 @@
           setTimeout(type, typingSpeed);
         }
 
-        // Efek kursor berkedip
         setInterval(() => cursor.classList.toggle("opacity-0"), 500);
 
         type();

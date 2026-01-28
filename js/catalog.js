@@ -1,18 +1,21 @@
 // ==================== catalog.js ====================
+
 const productList = document.getElementById("productList");
 const filterCategory = document.getElementById("filterCategory");
 const filterPrice = document.getElementById("filterPrice");
 const searchInput = document.getElementById("searchInput");
 
+const productModal = document.getElementById("productModal");
+const modalImage = document.getElementById("modalImage");
+const closeModal = document.getElementById("closeModal");
+
 const itemsPerPage = 20;
 let currentPage = 1;
 let filteredProducts = [];
 
-// === Render Produk ===
 function renderProducts(data) {
   productList.innerHTML = "";
 
-  // Hapus pagination lama agar tidak dobel
   const oldPagination = document.querySelector("#paginationContainer");
   if (oldPagination) oldPagination.remove();
 
@@ -29,7 +32,7 @@ function renderProducts(data) {
     return;
   }
 
-  paginated.forEach((p) => {
+  paginated.forEach((p, index) => {
     productList.innerHTML += `
       <div
         class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 
@@ -41,8 +44,7 @@ function renderProducts(data) {
         <img
           src="${p.image}"
           alt="${p.name}"
-          class="rounded-t-2xl h-40 w-full object-cover 
-                 transition-transform duration-500 hover:scale-105"
+          class="rounded-t-2xl h-40 w-full object-cover transition-transform duration-500 hover:scale-105"
         />
         <div class="p-4 text-center">
           <h3 class="text-sm font-semibold mb-1">${p.name}</h3>
@@ -50,10 +52,8 @@ function renderProducts(data) {
             Rp ${p.price.toLocaleString("id-ID")}
           </p>
           <button
-            class="bg-[#1e3a8a] dark:bg-blue-500 text-white px-4 py-2 
-                   rounded-lg text-sm font-medium 
-                   hover:bg-[#243fa7] dark:hover:bg-blue-400 
-                   transition duration-300"
+            class="detailBtn bg-[#1e3a8a] dark:bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#243fa7] dark:hover:bg-blue-400 transition duration-300"
+            data-index="${index}"
           >
             Detail
           </button>
@@ -63,9 +63,42 @@ function renderProducts(data) {
   });
 
   renderPagination(data.length);
+
+  const detailButtons = document.querySelectorAll(".detailBtn");
+  detailButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const index = btn.getAttribute("data-index");
+      openModal(paginated[index]);
+    });
+  });
 }
 
-// === Render Pagination ===
+function openModal(product) {
+  modalImage.src = product.image;
+  productModal.classList.remove("hidden");
+
+  setTimeout(() => {
+    modalImage.classList.remove("opacity-0", "scale-95");
+    modalImage.classList.add("opacity-100", "scale-100");
+  }, 10);
+}
+
+function closeModalWindow() {
+  modalImage.classList.add("opacity-0", "scale-95");
+  setTimeout(() => {
+    productModal.classList.add("hidden");
+  }, 200);
+}
+
+closeModal.addEventListener("click", closeModalWindow);
+productModal.addEventListener("click", (e) => {
+  if (e.target === productModal) closeModalWindow();
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeModalWindow();
+});
+
+// === Pagination ===
 function renderPagination(totalItems) {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   if (totalPages <= 1) return;
@@ -76,9 +109,11 @@ function renderPagination(totalItems) {
     paginationHTML += `
       <button
         class="px-3 py-1 rounded text-sm font-medium transition 
-               ${i === currentPage
-                 ? 'bg-[#1e3a8a] text-white dark:bg-blue-500'
-                 : 'bg-gray-200 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600'}"
+          ${
+            i === currentPage
+              ? "bg-[#1e3a8a] text-white dark:bg-blue-500"
+              : "bg-gray-200 dark:bg-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600"
+          }"
         onclick="goToPage(${i})"
       >
         ${i}
@@ -90,13 +125,11 @@ function renderPagination(totalItems) {
   productList.insertAdjacentHTML("afterend", paginationHTML);
 }
 
-// === Navigasi Halaman ===
 function goToPage(page) {
   currentPage = page;
   renderProducts(filteredProducts);
 }
 
-// === Filter Produk ===
 function filterProducts() {
   const category = filterCategory.value;
   const priceFilter = filterPrice.value;
@@ -120,11 +153,9 @@ function filterProducts() {
   renderProducts(filteredProducts);
 }
 
-// === Inisialisasi ===
 function initCatalog() {
   filteredProducts = products;
   renderProducts(products);
-
   filterCategory.addEventListener("change", filterProducts);
   filterPrice.addEventListener("change", filterProducts);
   searchInput.addEventListener("input", filterProducts);

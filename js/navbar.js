@@ -91,7 +91,6 @@
       });
     });
 
-    // === ACTIVE SECTION SAAT SCROLL ===
     window.addEventListener("scroll", () => {
       let current = "";
       document.querySelectorAll("section").forEach((section) => {
@@ -112,4 +111,3 @@
       });
     });
   });
-
