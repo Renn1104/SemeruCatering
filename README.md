@@ -1,10 +1,10 @@
 ## 🍰 **Semeru Catering** 🍰
 
-Website profil usaha rumahan "Semeru Catering" yang menyajikan berbagai pilihan kue tradisional dan hidangan lezat dengan desain modern bertema terang dan gelap (*Dark & light Theme*) yang elegan. Proyek ini dibangun untuk memperkenalkan produk kuliner lokal dengan pengalaman visual yang interaktif.
+Website profil usaha rumahan "Semeru Catering" yang menyajikan berbagai pilihan kue tradisional dan hidangan lezat dengan desain modern bertema terang dan gelap ( _light & Dark Theme_) yang elegan. Proyek ini dibangun untuk memperkenalkan produk kuliner lokal dengan pengalaman visual yang interaktif.
 
 🚀 ****Fitur Utama****
 
-1. **Beranda (Hero Section)**
+1. **Beranda (_Hero Section_)**
 * **Visual Maskot:** Menampilkan ilustrasi maskot koki yang ramah sebagai ikon utama brand.
 * **Call to Action:** Tombol "Lihat Produk" untuk navigasi cepat ke katalog menu.
 
@@ -30,9 +30,9 @@ Website profil usaha rumahan "Semeru Catering" yang menyajikan berbagai pilihan 
 | Komponen | Teknologi |
 | :--- | :--- |
 | **Markup** | HTML5 |
-| **Styling** | Tailwind CSS (Dark Mode Design) |
+| **Styling** | Tailwind CSS (_Light_ & _Dark Mode Design_) |
 | **Logic** | Vanilla JavaScript (ES6+) |
-| **Interactivity** | DOM Manipulation (Search & Pagination) |
+| **Interactivity** | DOM Manipulation (_Search_ & _Pagination_) |
 
 📁 **Struktur Project**
 
@@ -66,4 +66,6 @@ SEMERUCATERING/
 
 👤 **Author**
 **Rendy Nayogi Pramudya**
+
 Mahasiswa Sistem Informasi, Universitas Jember
+
