@@ -50,9 +50,9 @@ const products = [
   },
   {
     id: 8,
-    name: "Spikoe (Besar)",
+    name: "Spikoe Premium",
     category: "kering",
-    price: 85000,
+    price: 150000,
     image: "assets/images/products/Spikoe (besar).jpg",
   },
   {
