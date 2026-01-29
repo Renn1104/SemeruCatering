@@ -68,5 +68,3 @@ SEMERUCATERING/
 **Rendy Nayogi Pramudya**
 
 Mahasiswa Sistem Informasi, Universitas Jember
-
->>>>>>> e34ee05d734064971ca63d427405b7ffab23bc3f
