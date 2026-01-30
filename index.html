@@ -775,7 +775,15 @@
             const semeru = displayedText.split(" ")[0] || "";
             const catering = displayedText.replace(semeru, "").trim() || "";
             typingText.innerHTML = `
-          <span class="text-blue-800">${semeru}</span>
+          <span 
+            class="text-blue-800" 
+            style="
+              -webkit-text-stroke: 1.5px white;
+              text-stroke: 1px white;
+            "
+          >
+            ${semeru}
+          </span>
           <span class="text-orange-400"> ${catering}</span>
         `;
           } else {
@@ -803,7 +811,6 @@
         }
 
         setInterval(() => cursor.classList.toggle("opacity-0"), 500);
-
         type();
       });
     </script>
