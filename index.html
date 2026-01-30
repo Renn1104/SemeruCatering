@@ -415,8 +415,7 @@
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
           data-animate="fade-up"
           data-delay="0.5s"
-        >
-        </div>
+        ></div>
       </div>
 
       <div
@@ -435,7 +434,7 @@
             class="rounded-2xl max-w-[90vw] max-h-[85vh] object-contain shadow-2xl opacity-0 scale-95 transition-all duration-300"
           />
           <button
-            id="closeModal" 
+            id="closeModal"
             class="absolute top-3 right-3 bg-black/50 dark:bg-gray-900/70 text-white hover:bg-white/70 dark:hover:bg-blue-500 rounded-full w-9 h-9 flex items-center justify-center text-lg transition-all duration-300 shadow-md backdrop-blur-sm z-[100000]"
             title="Tutup"
           >
@@ -448,16 +447,18 @@
     <!-- ================= LOKASI ================= -->
     <section
       id="lokasi"
-      class="py-16 sm:py-20 bg-white dark:bg-gray-900 transition-colors duration-500"
+      class="py-24 bg-white dark:bg-gray-900 transition-colors duration-500"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
         <h2
-          class="text-xl sm:text-4xl font-semibold text-center text-primary dark:text-[#9EC8FF] mb-10"
+          data-animate="fade-up"
+          data-delay="0.1s"
+          class="text-3xl sm:text-4xl font-semibold text-center text-[#1e3a8a] dark:text-[#9EC8FF] mb-10"
         >
           Lokasi
         </h2>
 
-        <div>
+        <div data-animate="fade-up" data-delay="0.3s">
           <h3
             class="text-lg sm:text-xl font-medium text-gray-800 dark:text-gray-200 mb-4"
           >
@@ -467,10 +468,12 @@
         </div>
 
         <div
-          class="rounded-[2rem] overflow-hidden shadow-2xl border-8 border-gray-50 dark:border-gray-700 transition-all duration-500 hover:shadow-blue-300/30 dark:hover:shadow-blue-800/30"
+          data-animate="zoom-in"
+          data-delay="0.5s"
+          class="rounded-[2rem] overflow-hidden shadow-2xl border-8 border-gray-50 dark:border-gray-700 transition-all duration-500 hover:shadow-blue-300/30 dark:hover:shadow-blue-800/30 transform hover:scale-[1.02]"
         >
           <iframe
-            class="w-full h-72 sm:h-[500px]"
+            class="w-full h-72 sm:h-[500px] transition-transform duration-700"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.463996692713!2d113.21535877412602!3d-7.755562676594918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7adf219d6853d%3A0x967b55b7f987b3c4!2sDapur%20Semeru!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
             style="border: 0"
             allowfullscreen=""
@@ -479,11 +482,11 @@
           ></iframe>
         </div>
 
-        <div class="mt-6">
+        <div class="mt-6" data-animate="fade-up" data-delay="0.8s">
           <a
             href="https://maps.app.goo.gl/6jAtWPfRiwBWxxXx6?g_st=ac"
             target="_blank"
-            class="inline-block mt-2 text-blue-600 dark:text-blue-400 hover:underline text-sm font-semibold"
+            class="inline-block mt-2 text-blue-600 dark:text-blue-400 hover:underline text-sm font-semibold transition-all duration-300 hover:scale-105"
           >
             📍 Buka di Google Maps
           </a>
@@ -493,13 +496,18 @@
 
     <!-- ================= FOOTER ================= -->
     <footer
-      class="bg-gray-50 dark:bg-[#0d1b2a] border-t border-gray-200 dark:border-gray-700 pt-12 pb-4 font-sans transition-colors duration-500"
+      id="footer"
+      class="bg-gray-50 dark:bg-[#0d1b2a] border-t border-gray-200 dark:border-gray-700 pt-16 pb-6 font-sans transition-colors duration-500"
     >
       <div class="max-w-7xl mx-auto px-6">
         <div
-          class="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-10"
+          class="flex flex-col md:flex-row justify-between items-start md:items-center gap-10 mb-12"
         >
-          <div class="flex flex-col gap-4">
+          <div
+            class="flex flex-col gap-4"
+            data-animate="fade-up"
+            data-delay="0.1s"
+          >
             <div class="flex items-center gap-3">
               <img
                 src="assets/images/profile/logo_semerucatering.png"
@@ -512,11 +520,10 @@
                 class="h-12 w-auto hidden dark:block transition-all duration-500"
               />
             </div>
-
             <div
               class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed"
             >
-              <p class="font-semibold mb-1 text-primary dark:text-[#9EC8FF]">
+              <p class="font-semibold mb-1 text-[#1e3a8a] dark:text-[#9EC8FF]">
                 Home Catering
               </p>
               <p>
@@ -525,25 +532,29 @@
               </p>
             </div>
           </div>
-
-          <div class="flex flex-col items-start md:items-end gap-3">
-            <p class="text-sm font-semibold text-primary dark:text-[#9EC8FF]">
+          <div
+            class="flex flex-col items-start md:items-end gap-4"
+            data-animate="fade-up"
+            data-delay="0.3s"
+          >
+            <p class="text-sm font-semibold text-[#1e3a8a] dark:text-[#9EC8FF]">
               Hubungi Kami
             </p>
-
             <div class="flex gap-5 mt-2">
               <a
                 href="https://wa.me/6282230180406"
                 target="_blank"
                 title="WhatsApp"
-                class="group flex items-center justify-center w-10 h-10 rounded-full bg-green-500/10 hover:bg-green-500/20 transition-all duration-300"
+                class="group flex items-center justify-center w-10 h-10 rounded-full bg-green-500/10 hover:bg-green-500/20 transition-all duration-300 transform hover:-translate-y-1 hover:scale-110"
+                data-animate="zoom-in"
+                data-delay="0.5s"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="none"
-                  class="w-6 h-6 group-hover:scale-110 transition-transform"
+                  class="w-6 h-6"
                 >
                   <path
                     fill="#25D366"
@@ -555,14 +566,16 @@
                 href="https://www.instagram.com/ermawati_245?igsh=NGxocTRuejNzenJ0"
                 target="_blank"
                 title="Instagram"
-                class="group flex items-center justify-center w-10 h-10 rounded-full bg-pink-500/10 hover:bg-pink-500/20 transition-all duration-300"
+                class="group flex items-center justify-center w-10 h-10 rounded-full bg-pink-500/10 hover:bg-pink-500/20 transition-all duration-300 transform hover:-translate-y-1 hover:scale-110"
+                data-animate="zoom-in"
+                data-delay="0.7s"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="none"
-                  class="w-6 h-6 group-hover:scale-110 transition-transform"
+                  class="w-6 h-6"
                 >
                   <path
                     fill="url(#instaGradient)"
@@ -590,21 +603,22 @@
             </div>
           </div>
         </div>
-
         <div
           class="border-t border-gray-300 dark:border-gray-700 pt-4 flex flex-col sm:flex-row justify-between items-center text-[11px] sm:text-xs text-gray-600 dark:text-gray-400 opacity-90 gap-2 transition-colors duration-500"
+          data-animate="fade-up"
+          data-delay="0.9s"
         >
           <p>© 2025 Semeru Catering · All Rights Reserved</p>
           <div class="flex gap-4">
             <a
               href="#"
-              class="hover:underline hover:text-primary dark:hover:text-[#9EC8FF] transition"
+              class="hover:underline hover:text-[#1e3a8a] dark:hover:text-[#9EC8FF] transition"
               >Syarat & Ketentuan</a
             >
             <span>|</span>
             <a
               href="#"
-              class="hover:underline hover:text-primary dark:hover:text-[#9EC8FF] transition"
+              class="hover:underline hover:text-[#1e3a8a] dark:hover:text-[#9EC8FF] transition"
               >Kebijakan Privasi</a
             >
           </div>
