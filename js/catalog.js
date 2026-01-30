@@ -20,7 +20,6 @@ function renderProducts(data) {
   const start = (currentPage - 1) * itemsPerPage;
   const end = start + itemsPerPage;
   const paginated = data.slice(start, end);
-
   if (paginated.length === 0) {
     productList.innerHTML = `
       <p class="col-span-full text-center text-sm text-gray-500 dark:text-gray-300">
@@ -29,11 +28,10 @@ function renderProducts(data) {
     `;
     return;
   }
-
   paginated.forEach((p, index) => {
     productList.innerHTML += `
       <div
-        class="bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 
+        class="product-item bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 
                rounded-2xl overflow-hidden shadow-md hover:shadow-xl 
                dark:shadow-[0_0_15px_rgba(59,130,246,0.2)]
                transition-all duration-500 transform 
@@ -61,14 +59,38 @@ function renderProducts(data) {
   });
 
   renderPagination(data.length);
+  applyScrollAnimation(); 
+  setupDetailButtons(paginated);
+}
 
-  const detailButtons = document.querySelectorAll(".detailBtn");
-  detailButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const index = btn.getAttribute("data-index");
-      openModal(paginated[index]);
-    });
+function applyScrollAnimation() {
+  const productItems = document.querySelectorAll("#productList .product-item");
+
+  productItems.forEach((item, i) => {
+    item.setAttribute("data-animate", "zoom-in");
+    item.setAttribute("data-delay", `${0.05 * i}s`);
+    item.classList.add("opacity-0", "translate-y-5");
   });
+
+  if (window.IntersectionObserver) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const anim = el.dataset.animate || "fade-up";
+            const delay = el.dataset.delay || "0s";
+            el.style.animation = `${anim} 0.8s ease-out ${delay} forwards`;
+            el.classList.remove("opacity-0", "translate-y-5");
+            observer.unobserve(el);
+          }
+        });
+      },
+      { threshold: 0.15 }
+    );
+
+    productItems.forEach((el) => observer.observe(el));
+  }
 }
 
 function openModal(product) {
@@ -100,7 +122,7 @@ function renderPagination(totalItems) {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
   if (totalPages <= 1) return;
 
-  let paginationHTML = `<div id="paginationContainer" class="flex justify-center gap-2 mt-8">`;
+  let paginationHTML = `<div id="paginationContainer" class="flex justify-center gap-2 mt-8 opacity-0 translate-y-3 transition-all duration-700">`;
 
   for (let i = 1; i <= totalPages; i++) {
     paginationHTML += `
@@ -120,6 +142,12 @@ function renderPagination(totalItems) {
 
   paginationHTML += `</div>`;
   productList.insertAdjacentHTML("afterend", paginationHTML);
+
+  setTimeout(() => {
+    const pagination = document.getElementById("paginationContainer");
+    pagination.classList.remove("opacity-0", "translate-y-3");
+    pagination.classList.add("opacity-100", "translate-y-0");
+  }, 100);
 }
 
 function goToPage(page) {
@@ -137,11 +165,8 @@ function filterProducts() {
     const matchKeyword = p.name.toLowerCase().includes(keyword);
 
     let matchPrice = true;
-    if (priceFilter === "under10") {
-      matchPrice = p.price < 10000;
-    } else if (priceFilter === "above10") {
-      matchPrice = p.price >= 10000;
-    }
+    if (priceFilter === "under10") matchPrice = p.price < 10000;
+    else if (priceFilter === "above10") matchPrice = p.price >= 10000;
 
     return matchCategory && matchKeyword && matchPrice;
   });
@@ -150,9 +175,20 @@ function filterProducts() {
   renderProducts(filteredProducts);
 }
 
+function setupDetailButtons(paginated) {
+  const detailButtons = document.querySelectorAll(".detailBtn");
+  detailButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const index = btn.getAttribute("data-index");
+      openModal(paginated[index]);
+    });
+  });
+}
+
 function initCatalog() {
   filteredProducts = products;
   renderProducts(products);
+
   filterCategory.addEventListener("change", filterProducts);
   filterPrice.addEventListener("change", filterProducts);
   searchInput.addEventListener("input", filterProducts);
