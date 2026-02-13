@@ -160,11 +160,18 @@ const products = [
     price: 5000,
     image: "assets/images/products/Cake Salju.jpg",
   },
-    {
+  {
     id: 24,
     name: "Nampan (Mix)",
     category: "basah",
     price: 100000,
     image: "assets/images/products/Nampan (100k).jpg",
+  },
+  {
+    id: 25,
+    name: "Apem",
+    category: "basah",
+    price: 5000,
+    image: "assets/images/products/apem.jpeg",
   },
 ];
